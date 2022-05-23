@@ -4,6 +4,10 @@ from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    favorite_pokemon = models.CharField(max_length=50)
+
 TYPES = (('E', 'Electric'), ('F', 'Fire'), ('R', 'Rock'), ('W', 'Water'))
 
 # Create your models here.

@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -12,4 +13,7 @@ urlpatterns = [
     path('pokemons/<int:pokemon_id>/add_training/', views.add_training, name='add_training'),
     path('pokemons/<int:pokemon_id>/assoc_move/<int:move_id>/', views.assoc_move, name='assoc_move'),
     path('pokemons/<int:pokemon_id>/add_photo', views.add_photo, name='add_photo'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
